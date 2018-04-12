@@ -27,14 +27,36 @@
 			type="java.lang.String" />
 	</bean>
 
-	<bean id="student" class="com.privalia.entity.Student">
-		<property name="idStudent" value="1"></property>
-		<property name="name" value="Pepe"></property>
+	<!--  <bean id="student" class="com.privalia.entity.Student">
+		<property name="idStudent" value="${student.idStudent}"></property>
+		<property name="name" value="${student.name}"></property>
 		<property name="surname" value="Soto"></property>
 		<property name="age" value="24"></property>
 		<property name="adress">
 			<ref bean="adress" />
 		</property>
+	</bean>-->
+
+	<bean id="student" class="com.privalia.entity.listas.Student">
+		<constructor-arg name="idStudent" value="${student.idStudent}"></constructor-arg>
+		<constructor-arg name="name" value="Pepe"></constructor-arg>
+		<constructor-arg name="age" value="24"></constructor-arg>
+		<constructor-arg>
+			<list>
+				<ref bean="teacher1" />
+				<ref bean="teacher2" />
+			</list>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="teacher1" class="com.privalia.entity.listas.Teacher">
+		<property name="idTeacher" value="1"></property>
+		<property name="name" value="Profe 1"></property>
+	</bean>
+	
+	<bean id="teacher2" class="com.privalia.entity.listas.Teacher">
+		<property name="idTeacher" value="2"></property>
+		<property name="name" value="Profe 2"></property>
 	</bean>
 
 	<bean id="studentConstructor" class="com.privalia.entity.Student">

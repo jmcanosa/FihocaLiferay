@@ -1,4 +1,4 @@
-package com.privalia.entity.annotations;
+package com.privalia.entity.listas;
 
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -13,15 +13,10 @@ public class Principal {
 		
 		Student student = (Student) context.getBean("student");
 		
-
 		
 		System.out.println(student.toString());
 		
-		 
-		Student studentConsnstrructor = (Student) context.getBean("studentConstructor");
-		
-		System.out.println(studentConsnstrructor.toString());
-		
+
 		
 	}
 
